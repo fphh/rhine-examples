@@ -26,15 +26,15 @@ instance Clock Curses CursesClock where
   type Tag          CursesClock = Maybe Event
 
   startClock _ = do
-    liftIO (putStrLn "hi")
+
     let getEv = do
           w <- defaultWindow
           getEvent w Nothing
-          
+                    
     initialTime <- liftIO getCurrentTime
     return
       (     arrM_ (liftIO getCurrentTime)
-        &&& arrM_ getEv -- (liftIO getLine)
+        &&& arrM_ getEv
       , initialTime
       )
 
