@@ -16,8 +16,7 @@ import FRP.Rhine
 import UI.NCurses
 
 {- |
-A clock that ticks for every line entered on the console,
-outputting the entered line as its |Tag|.
+A clock that ticks for every Curses event.
 -}
 data CursesClock = CursesClock
 
